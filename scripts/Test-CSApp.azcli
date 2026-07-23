@@ -1,0 +1,5 @@
+dotnet new console -n Test-CSApp
+
+dotnet new sln -n CSAppSln
+dotnet sln CSAppSln.slnx add Test-CSApp/Test-CSApp.csproj
+
