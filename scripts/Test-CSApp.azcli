@@ -3,3 +3,9 @@ dotnet new console -n Test-CSApp
 dotnet new sln -n CSAppSln
 dotnet sln CSAppSln.slnx add Test-CSApp/Test-CSApp.csproj
 
+cd Test-CSApp
+
+dotnet add package Microsoft.Extensions.Configuration
+dotnet add package Microsoft.Extensions.Configuration.Json
+dotnet add package Microsoft.Extensions.Configuration.EnvironmentVariables
+dotnet add package Microsoft.Extensions.Configuration.UserSecrets
