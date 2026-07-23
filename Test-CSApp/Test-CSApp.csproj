@@ -6,6 +6,7 @@
     <RootNamespace>Test_CSApp</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <UserSecretsId>b2b12884-311c-4cfb-bf37-38d7cbb008f3</UserSecretsId>
   </PropertyGroup>
 
 </Project>
