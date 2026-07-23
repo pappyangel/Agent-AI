@@ -6,7 +6,8 @@ az --version
 export TENANT_ID_LIVE=$(az account show --query tenantId --output tsv)
 echo $TENANT_ID_LIVE
 echo $SUB_NAME_LIVE
-echo $TENANT_ID_PLURALPOINT
+echo $TENANT_ID_PLURAL
+echo $SUB_NAME_PLURAL
 
 
 # login to Azure
