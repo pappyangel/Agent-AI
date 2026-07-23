@@ -6,11 +6,8 @@
     <RootNamespace>Test_CSApp</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-<<<<<<< HEAD
     <UserSecretsId>40042cee-65b4-4b9b-968e-878df201feaf</UserSecretsId>
-=======
     <UserSecretsId>b2b12884-311c-4cfb-bf37-38d7cbb008f3</UserSecretsId>
->>>>>>> 7e02e106d13d369f8267c1617a3ec5151f599a27
   </PropertyGroup>
 
 </Project>
