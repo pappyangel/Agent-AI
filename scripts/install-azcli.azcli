@@ -13,7 +13,7 @@ echo $SUB_NAME_PLURAL
 # login to Azure
 az account show
 az login --tenant $TENANT_ID_LIVE
-az login --tenant $TENANT_ID_PLURALPOINT
+az login --tenant $TENANT_ID_PLURAL
 #az account set --subscription $SUBSCRIPTION_NAME_FY25
 az account list --output table
 
