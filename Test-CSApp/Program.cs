@@ -1,8 +1,9 @@
-﻿﻿﻿using Microsoft.Extensions.Configuration;
+﻿using System.Text.Json;
+using Microsoft.Extensions.Configuration;
 
 Console.WriteLine("Start of Program");
 
-// Load configuration and get values
+
 var (projectEndpoint, modelDeploymentName, contentsafetyEndpoint) = LoadConfiguration();
 
 Console.WriteLine($"Project Endpoint: {projectEndpoint}");
@@ -33,3 +34,4 @@ Console.WriteLine("End of Program");
 
     return (projectEndpoint, modelDeploymentName, contentsafetyEndpoint);
 }
+
