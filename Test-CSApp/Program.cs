@@ -10,6 +10,9 @@ Console.WriteLine($"Project Endpoint: {projectEndpoint}");
 Console.WriteLine($"Model Deployment Name: {modelDeploymentName}");
 Console.WriteLine($"Content Safety Endpoint: {contentsafetyEndpoint}");
 
+var subNameLive = Environment.GetEnvironmentVariable("SUB_NAME_LIVE");
+Console.WriteLine(subNameLive);
+
 Console.WriteLine("End of Program");
 //////// MAIN Program END ////////
 
