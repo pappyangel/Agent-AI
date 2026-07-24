@@ -1,5 +1,6 @@
 <Solution>
   <Project Path="jfv-QSAgentChat/jfv-QSAgentChat.csproj" />
+  <Project Path="jfv-QSCallAgentChat/jfv-QSCallAgentChat.csproj" />
   <Project Path="jfv-QSModelChat/jfv-QSModelChat.csproj" />
   <Project Path="Test-CSApp/Test-CSApp.csproj" />
   <Project Path="tr-QSAgentChat/tr-QSAgentChat.csproj" />
