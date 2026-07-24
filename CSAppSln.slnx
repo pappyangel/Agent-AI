@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="Test-CSApp/Test-CSApp.csproj" />
+  <Project Path="tr-QSModelChat/tr-QSModelChat.csproj" />
 </Solution>
