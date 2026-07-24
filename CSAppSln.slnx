@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="jfv-QSModelChat/jfv-QSModelChat.csproj" />
   <Project Path="Test-CSApp/Test-CSApp.csproj" />
   <Project Path="tr-QSModelChat/tr-QSModelChat.csproj" />
 </Solution>
