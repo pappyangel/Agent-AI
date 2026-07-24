@@ -1,0 +1,5 @@
+dotnet new webapi -o GetDataAPI 
+
+dotnet sln CSAppSln.slnx add GetDataAPI/GetDataAPI.csproj
+
+cd GetDataAPI
