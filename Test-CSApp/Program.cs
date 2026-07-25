@@ -3,20 +3,27 @@ using Microsoft.Extensions.Configuration;
 
 Console.WriteLine("Start of Program");
 
-
-// Load configuration and get values
 var (projectEndpoint, modelDeploymentName, contentsafetyEndpoint, agentName) = LoadConfiguration();
 
-Console.WriteLine($"Project Endpoint: {projectEndpoint}");
-Console.WriteLine($"Model Deployment Name: {modelDeploymentName}");
-Console.WriteLine($"Content Safety Endpoint: {contentsafetyEndpoint}");
-Console.WriteLine($"Agent Name: {agentName}");
-
-var subNameLive = Environment.GetEnvironmentVariable("SUB_NAME_LIVE");
-Console.WriteLine(subNameLive);
+GetEnvVars();
 
 Console.WriteLine("End of Program");
 //////// MAIN Program END ////////
+
+void GetEnvVars()
+{
+    string projectEndpoint = Environment.GetEnvironmentVariable("PROJECT_ENDPOINT") ?? "<not set>";
+    string modelDeploymentName = Environment.GetEnvironmentVariable("MODEL_DEPLOYMENT_NAME") ?? "<not set>";
+    string contentSafetyEndpoint = Environment.GetEnvironmentVariable("CSAFE_ENDPOINT") ?? "<not set>";
+    string tenantId = Environment.GetEnvironmentVariable("TENANT_ID") ?? "<not set>";
+    string subName = Environment.GetEnvironmentVariable("SUB_NAME") ?? "<not set>";
+
+    Console.WriteLine($"Project Endpoint: {projectEndpoint}");
+    Console.WriteLine($"Model Deployment Name: {modelDeploymentName}");
+    Console.WriteLine($"Content Safety Endpoint: {contentSafetyEndpoint}");
+    Console.WriteLine($"Tenant ID: {tenantId}");
+    Console.WriteLine($"Subscription Name: {subName}");
+}
 
 // Load configuration from appsettings, user secrets, and environment variables
 (string, string, string, string) LoadConfiguration()
@@ -28,17 +35,17 @@ Console.WriteLine("End of Program");
         .AddEnvironmentVariables()
         .Build();
 
-    string projectEndpoint = config["PROJECT_ENDPOINT"]
+    string projectEndpointFromConfig = config["PROJECT_ENDPOINT"]
         ?? throw new InvalidOperationException("Missing PROJECT_ENDPOINT");
 
-    string modelDeploymentName = config["MODEL_DEPLOYMENT_NAME"]
+    string modelDeploymentNameFromConfig = config["MODEL_DEPLOYMENT_NAME"]
         ?? throw new InvalidOperationException("Missing MODEL_DEPLOYMENT_NAME");
 
-    string contentsafetyEndpoint = config["CSAFE_ENDPOINT"]
+    string contentsafetyEndpointFromConfig = config["CSAFE_ENDPOINT"]
         ?? throw new InvalidOperationException("Missing CSAFE_ENDPOINT");
 
     string agentName = config["AGENT_NAME"]
         ?? throw new InvalidOperationException("Missing AGENT_NAME");
 
-    return (projectEndpoint, modelDeploymentName, contentsafetyEndpoint, agentName);
+    return (projectEndpointFromConfig, modelDeploymentNameFromConfig, contentsafetyEndpointFromConfig, agentName);
 }
