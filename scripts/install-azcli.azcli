@@ -18,3 +18,6 @@ az login --tenant $TENANT_ID_PLURAL
 az account list --output table
 
 curl ifconfig.me
+
+export PROJECT_ENDPOINT="BobEnv"
+echo $PROJECT_ENDPOINT

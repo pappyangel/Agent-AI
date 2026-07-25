@@ -10,14 +10,13 @@ using OpenAI.Responses;
 Console.WriteLine("Start of Program");
 
 
-var (projectEndpoint, modelDeploymentName, contentsafetyEndpoint) = LoadConfiguration();
+// Load configuration and get values
+var (projectEndpoint, modelDeploymentName, contentsafetyEndpoint, agentName) = LoadConfiguration();
 
-// Console.WriteLine($"Project Endpoint: {projectEndpoint}");
-// Console.WriteLine($"Model Deployment Name: {modelDeploymentName}");
-// Console.WriteLine($"Content Safety Endpoint: {contentsafetyEndpoint}");
-
-// var subNameLive = Environment.GetEnvironmentVariable("SUB_NAME_LIVE");
-// Console.WriteLine(subNameLive);
+Console.WriteLine($"Project Endpoint: {projectEndpoint}");
+Console.WriteLine($"Model Deployment Name: {modelDeploymentName}");
+Console.WriteLine($"Content Safety Endpoint: {contentsafetyEndpoint}");
+Console.WriteLine($"Agent Name: {agentName}");
 
 
 // Create project client to call Foundry API
@@ -36,7 +35,7 @@ Console.WriteLine("End of Program");
 //////// MAIN Program END ////////
 
 // Load configuration from appsettings, user secrets, and environment variables
-(string, string, string) LoadConfiguration()
+(string, string, string, string) LoadConfiguration()
 {
     var config = new ConfigurationBuilder()
         .SetBasePath(Directory.GetCurrentDirectory())
@@ -45,8 +44,8 @@ Console.WriteLine("End of Program");
         .AddEnvironmentVariables()
         .Build();
 
-    string projectEndpoint = config["AI_RESOURCE_ENDPOINT"]
-        ?? throw new InvalidOperationException("Missing AI_RESOURCE_ENDPOINT");
+    string projectEndpoint = config["PROJECT_ENDPOINT"]
+        ?? throw new InvalidOperationException("Missing PROJECT_ENDPOINT");
 
     string modelDeploymentName = config["MODEL_DEPLOYMENT_NAME"]
         ?? throw new InvalidOperationException("Missing MODEL_DEPLOYMENT_NAME");
@@ -54,7 +53,10 @@ Console.WriteLine("End of Program");
     string contentsafetyEndpoint = config["CSAFE_ENDPOINT"]
         ?? throw new InvalidOperationException("Missing CSAFE_ENDPOINT");
 
-    return (projectEndpoint, modelDeploymentName, contentsafetyEndpoint);
+    string agentName = config["AGENT_NAME"]
+        ?? throw new InvalidOperationException("Missing AGENT_NAME");
+
+    return (projectEndpoint, modelDeploymentName, contentsafetyEndpoint, agentName);
 }
 
 
