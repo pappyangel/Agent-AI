@@ -1,0 +1,3 @@
+source ../scripts/Set-Env-Live.azcli
+
+source ../scripts/Set-Env-Plural.azcli
