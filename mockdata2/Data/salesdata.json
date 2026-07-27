@@ -1,0 +1,52 @@
+[
+  {
+    "Cid": 1,
+    "ClientName": "Initech",
+    "UsCity": "Atlanta",
+    "UsState": "Georgia",
+    "Status": "Cancelled",
+    "TotalSales": 1303.61,
+    "CreatedDt": "2022-02-11T17:14:12",
+    "Active": 1
+  },
+  {
+    "Cid": 2,
+    "ClientName": "Initech",
+    "UsCity": "Austin",
+    "UsState": "Texas",
+    "Status": "Closed",
+    "TotalSales": 9712.70,
+    "CreatedDt": "2026-04-09T08:20:33",
+    "Active": 1
+  },
+  {
+    "Cid": 3,
+    "ClientName": "Pied Piper",
+    "UsCity": "Los Angeles",
+    "UsState": "California",
+    "Status": "Cancelled",
+    "TotalSales": 44392.45,
+    "CreatedDt": "2022-03-29T07:24:16",
+    "Active": 1
+  },
+  {
+    "Cid": 4,
+    "ClientName": "Initech",
+    "UsCity": "New York",
+    "UsState": "New York",
+    "Status": "Pending",
+    "TotalSales": 28817.29,
+    "CreatedDt": "2025-11-09T21:00:47",
+    "Active": 0
+  },
+  {
+    "Cid": 5,
+    "ClientName": "Dunder Mifflin",
+    "UsCity": "Columbus",
+    "UsState": "Ohio",
+    "Status": "Active",
+    "TotalSales": 11457.02,
+    "CreatedDt": "2024-05-30T12:52:27",
+    "Active": 1
+  }
+]
