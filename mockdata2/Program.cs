@@ -38,7 +38,6 @@ app.MapPost("/api/sales/createmockdata", (MockDataService service) =>
     return Results.Ok(service.CreateMockData());
 })
 .WithName("CreateMockData")
-
 .Produces<IReadOnlyList<object>>(StatusCodes.Status200OK);
 
 app.MapGet("/", (ILogger<Program> logger) =>
