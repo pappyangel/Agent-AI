@@ -22,7 +22,6 @@ app.MapGet("/api/sales/getallsales", (MockDataService service) =>
     return Results.Ok(service.GetAllSales());
 })
 .WithName("GetAllSales")
-
 .Produces<IReadOnlyList<object>>(StatusCodes.Status200OK);
 
 app.MapGet("/api/sales/getsalesbycid/{cid:int}", (int cid, MockDataService service) =>
@@ -31,7 +30,6 @@ app.MapGet("/api/sales/getsalesbycid/{cid:int}", (int cid, MockDataService servi
     return sale is null ? Results.NotFound() : Results.Ok(sale);
 })
 .WithName("GetSalesByCid")
-
 .Produces<object>(StatusCodes.Status200OK)
 .Produces(StatusCodes.Status404NotFound);
 
