@@ -1,3 +1,4 @@
+using mockdata2.Models;
 using mockdata2.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,28 +18,37 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 // Minimal API endpoints
-app.MapGet("/api/sales/getallsales", (MockDataService service) =>
+app.MapGet("/api/sales/getallsales", (MockDataService service,ILogger<Program> logger) =>
 {
+    logger.LogInformation("GetAllSales endpoint called");
     return Results.Ok(service.GetAllSales());
 })
 .WithName("GetAllSales")
-.Produces<IReadOnlyList<object>>(StatusCodes.Status200OK);
+.WithSummary("Returns all sales")
+.WithDescription("Returns the complete list of sales records from the mock data service.")
+.Produces<IReadOnlyList<Sales>>(StatusCodes.Status200OK);
 
-app.MapGet("/api/sales/getsalesbycid/{cid:int}", (int cid, MockDataService service) =>
+app.MapGet("/api/sales/getsalesbycid/{cid:int}", (int cid, MockDataService service,ILogger<Program> logger) =>
 {
-    var sale = service.GetSalesByCid(cid);
-    return sale is null ? Results.NotFound() : Results.Ok(sale);
+    logger.LogInformation("GetSalesByCid endpoint called with CID: {Cid}", cid);
+    var customersales = service.GetSalesByCid(cid);
+    return customersales is null ? Results.NotFound() : Results.Ok(customersales);
 })
 .WithName("GetSalesByCid")
-.Produces<object>(StatusCodes.Status200OK)
+.WithSummary("Returns sales for a customer")
+.WithDescription("Returns the sales record for the specified customer identifier if one exists.")
+.Produces<Sales>(StatusCodes.Status200OK)
 .Produces(StatusCodes.Status404NotFound);
 
-app.MapPost("/api/sales/createmockdata", (MockDataService service) =>
+app.MapPost("/api/sales/createmockdata", (MockDataService service, ILogger<Program> logger) =>
 {
+    logger.LogInformation("CreateMockData endpoint called");
     return Results.Ok(service.CreateMockData());
 })
 .WithName("CreateMockData")
-.Produces<IReadOnlyList<object>>(StatusCodes.Status200OK);
+.WithSummary("Creates mock sales data")
+.WithDescription("Generates a fresh set of mock sales records and returns them.")
+.Produces<IReadOnlyList<Sales>>(StatusCodes.Status200OK);
 
 app.MapGet("/", (ILogger<Program> logger) =>
 {
