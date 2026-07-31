@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "DevKitDebug": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
