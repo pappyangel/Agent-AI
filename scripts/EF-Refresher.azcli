@@ -1,0 +1,12 @@
+# https://learn.microsoft.com/en-us/ef/core/get-started/overview/first-app?tabs=netcore-cli
+
+dotnet new console -o EFRefresher
+dotnet sln CSAppSln.slnx add EFRefresher/EFRefresher.csproj
+cd EFRefresher
+
+dotnet build
+
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.EntityFrameworkCore.Design
+
+
