@@ -1,10 +1,8 @@
-dotnet new webapi -o GetDataAPI 
+dotnet new webapi -o mockdata2 
 
-dotnet sln CSAppSln.slnx add GetDataAPI/GetDataAPI.csproj
+dotnet sln CSAppSln.slnx add mockdata2/mockdata2.csproj
 
-cd GetDataAPI
 -----
-
 cd mockdata2
 dotnet build
 
