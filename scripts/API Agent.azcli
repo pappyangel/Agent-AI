@@ -1,0 +1,15 @@
+dotnet new console -n APIAgent
+
+dotnet sln CSAppSln.slnx add APIAgent/APIAgent.csproj
+
+cd APIAgent
+
+# Actual packages used
+
+# packages for authentication
+dotnet add package Azure.Identity
+
+#  packages for Foundry
+dotnet add package Azure.AI.Projects
+dotnet add package Azure.AI.Projects.Agents
+

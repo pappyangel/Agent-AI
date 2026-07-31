@@ -1,0 +1,16 @@
+@mockdata2_HostAddress = http://localhost:5272
+
+GET {{mockdata2_HostAddress}}/api/sales/getallsales
+Accept: application/json
+
+###
+
+GET {{mockdata2_HostAddress}}/api/sales/getsalesbycid/1
+Accept: application/json
+
+###
+
+POST {{mockdata2_HostAddress}}/api/sales/createmockdata
+Accept: application/json
+
+###
