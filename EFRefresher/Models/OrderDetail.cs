@@ -20,6 +20,8 @@ public class OrderDetail
 
     // Navigation property
     public Order? Order { get; set; }
+    public Product? Product { get; set; }
+
     public ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
 
 }

@@ -1,0 +1,13 @@
+dotnet new webapi -n EF-API
+
+dotnet sln CSAppSln.slnx add EF-API/EF-API.csproj
+cd EF-API
+
+dotnet add reference ../EFRefresher/EFRefresher.csproj
+dotnet add package Microsoft.OpenApi --version 2.7.5
+
+curl http://localhost:5265
+
+dotnet add package Azure.Identity
+dotnet add package Microsoft.Data.SqlClient
+
