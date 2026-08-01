@@ -14,3 +14,7 @@ dotnet add package Microsoft.Extensions.Configuration.Json
 dotnet add package Microsoft.Extensions.Configuration.UserSecrets
 dotnet add package Microsoft.Extensions.Configuration.EnvironmentVariables
 
+dotnet tool install --global dotnet-ef
+
+dotnet ef migrations add InitialCreate
+dotnet ef database update

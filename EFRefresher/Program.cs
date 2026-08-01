@@ -30,7 +30,7 @@ var connectionString = $"{baseConn};Database={dbName}";
 
 Console.WriteLine($"Connection String: {connectionString}");
 
-Environment.Exit(0);
+//Environment.Exit(0);
 
 // Get an access token using DefaultAzureCredential
 var credential = new DefaultAzureCredential();
