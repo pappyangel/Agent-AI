@@ -32,7 +32,7 @@ var connectionString = config.GetConnectionString("SqlDb");
 
 Console.WriteLine($"Connection String: {connectionString}");
 
-Environment.Exit(0);
+// Environment.Exit(0);
 
 // Get an access token using DefaultAzureCredential
 var credential = new DefaultAzureCredential();
@@ -56,4 +56,4 @@ Console.WriteLine($"Orders in DB: {count}");
 
 // context.Database.Migrate();
 
-Console.WriteLine("Check. Migration applied using DefaultAzureCredential.");
+Console.WriteLine("Check. EF setup created using DefaultAzureCredential.");
