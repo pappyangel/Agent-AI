@@ -11,8 +11,13 @@ VALUES
     ('Angels Envy Rye', 'Rye aged in rum casks', 79.99, 1);
 
 INSERT INTO Orders (CustomerId, OrderDate, TotalAmount)
-VALUES (1, GETUTCDATE(), 9.99);
+VALUES (1011, GETUTCDATE(), 9.99);
 
 INSERT INTO OrderDetails (OrderId, ProductId, Quantity, UnitPrice, LineTotal)
-VALUES (1000, 1, 1, 9.99, 9.99);
+VALUES (1003, 1011, 1, 9.99, 9.99);
+
+DELETE FROM Customers;
+DELETE FROM Products;
+DELETE FROM Orders;
+DELETE FROM OrderDetails;
 

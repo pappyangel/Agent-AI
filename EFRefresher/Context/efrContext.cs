@@ -19,19 +19,19 @@ public partial class efrContext : DbContext
     {
         modelBuilder.Entity<Customer>()
           .Property(c => c.CustomerId)
-          .UseIdentityColumn(seed: 1001, increment: 1);
+          .UseIdentityColumn(seed: 1000, increment: 1);
 
         modelBuilder.Entity<Product>()
             .Property(p => p.ProductId)
-            .UseIdentityColumn(seed: 1001, increment: 1);
+            .UseIdentityColumn(seed: 1000, increment: 1);
 
         modelBuilder.Entity<Order>()
             .Property(o => o.OrderId)
-            .UseIdentityColumn(seed: 1001, increment: 1);
+            .UseIdentityColumn(seed: 1000, increment: 1);
 
         modelBuilder.Entity<OrderDetail>()
             .Property(od => od.OrderDetailId)
-            .UseIdentityColumn(seed: 1001, increment: 1);
+            .UseIdentityColumn(seed: 1000, increment: 1);
 
         // You can add other configuration here later
         // e.g. relationships, precision, indexes, etc.
