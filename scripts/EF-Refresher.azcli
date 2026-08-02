@@ -21,3 +21,9 @@ dotnet ef database update
 
 dotnet ef migrations add ProductTable
 dotnet ef database update
+
+dotnet ef migrations add FixOrderDetailAndIdentitySeed
+dotnet ef database update
+
+dotnet ef migrations add SetIdentitySeedValues
+dotnet ef database update

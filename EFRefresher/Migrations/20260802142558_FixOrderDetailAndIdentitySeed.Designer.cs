@@ -4,6 +4,7 @@ using EFRefresher.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFRefresher.Migrations
 {
     [DbContext(typeof(efrContext))]
-    partial class efrContextModelSnapshot : ModelSnapshot
+    [Migration("20260802142558_FixOrderDetailAndIdentitySeed")]
+    partial class FixOrderDetailAndIdentitySeed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,17 +27,17 @@ namespace EFRefresher.Migrations
 
             modelBuilder.Entity("EFRefresher.Models.Customer", b =>
                 {
-                    b.Property<int>("CustomerId")
+                    b.Property<int>("CustomerID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomerId"), 1001L);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomerID"));
 
                     b.Property<string>("CustomerName")
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
-                    b.HasKey("CustomerId");
+                    b.HasKey("CustomerID");
 
                     b.ToTable("Customers");
                 });
@@ -45,7 +48,7 @@ namespace EFRefresher.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderId"), 1001L);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderId"));
 
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
@@ -70,7 +73,7 @@ namespace EFRefresher.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderDetailId"), 1001L);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderDetailId"), 1000L);
 
                     b.Property<decimal>("LineTotal")
                         .HasPrecision(18, 2)
@@ -104,7 +107,7 @@ namespace EFRefresher.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductId"), 1001L);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductId"));
 
                     b.Property<string>("Description")
                         .HasMaxLength(200)
