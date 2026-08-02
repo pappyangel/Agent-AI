@@ -24,10 +24,11 @@ Console.WriteLine($"Configuration Loaded: {config["dog"]}");
 
 
 // Your SQL Azure connection string without credentials
-var baseConn = config.GetConnectionString("SqlDb");
+var baseConn = config.GetConnectionString("SqlDb2");
 var dbName = config["DatabaseName"];
 var connectionString = $"{baseConn};Database={dbName}";
 
+Console.WriteLine($"Using connection string key: SqlDb2");
 Console.WriteLine($"Connection String: {connectionString}");
 
 //Environment.Exit(0);
