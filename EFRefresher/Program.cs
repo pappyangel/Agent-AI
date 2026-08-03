@@ -48,12 +48,31 @@ sqlConnection.AccessToken = token.Token;
 var optionsBuilder = new DbContextOptionsBuilder<efrContext>();
 optionsBuilder.UseSqlServer(sqlConnection);
 
+
+// Various EF commands for testing the connection and querying data
 using var context = new efrContext(optionsBuilder.Options);
 
-Console.WriteLine("Testing EF Core connection...");
 var count = context.Orders.Count();
 Console.WriteLine($"Orders in DB: {count}");
 
-// context.Database.Migrate();
+var customerWithOrders = await context.Customers
+    .Include(c => c.Orders)
+    .FirstOrDefaultAsync(c => c.CustomerId == 1011);
+
+if (customerWithOrders != null)
+{
+    Console.WriteLine($"Customer: {customerWithOrders.CustomerName}");
+    foreach (var order in customerWithOrders.Orders)
+    {
+        Console.WriteLine($"  Order {order.OrderId} on {order.OrderDate}, Total: {order.TotalAmount}");
+    }
+}
+else
+{
+    Console.WriteLine("Customer not found.");
+}
+
+
+
 
 Console.WriteLine("Check. EF setup created using DefaultAzureCredential.");
